@@ -1,3 +1,10 @@
+.introducao  {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
+
 .main {
     margin-top: 50px;
     text-align: center;
@@ -10,6 +17,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
   
   .definicao li {
@@ -35,17 +43,17 @@
   .definicao h3 {
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   
   .definicao-descricao {
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .definicao li img {
     max-width: 100%;
     height: auto;
     max-height: 200px; 
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     border-radius: 8px;
   }
