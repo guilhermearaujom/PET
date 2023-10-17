@@ -9,26 +9,7 @@
 		<link rel="stylesheet" href="css/contato.css">
 	</head>
 	<body>
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            const firebaseConfig = {
-              apiKey: "AIzaSyC610lPnIxA-LmCLjN307Q6fM5pDs-1_eU",
-              authDomain: "petcc-f70bf.firebaseapp.com",
-              projectId: "petcc-f70bf",
-              storageBucket: "petcc-f70bf.appspot.com",
-              messagingSenderId: "797090404602",
-              appId: "1:797090404602:web:dbe7a9831f0c79c35dd143"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-          </script>
-
+        
 
 		<header>
 			<div class ="principal">
@@ -55,7 +36,7 @@
                     <p>Para parcerias e interesse em ser voluntário em alguns projetos, é só preencher o formulário!</p>
                 </div>
             </div>
-            <form action="" method="POST">
+            <div>
                 <label for="nome">Nome Completo* </label>
                 <input id="nome" class="input-form" type="text" name="name" placeholder="Digite o nome" required>
                 <label for="email">E-mail* </label>
@@ -63,11 +44,58 @@
                 <label for="phone">Telefone para contato* </label>
                 <input id="phone" class="input-form" type="text" name="phone" placeholder="(XX) 9XXXX-XXXX" required>
                 <label for="messagem">Mensagem* </label>
-                <textarea id="messagem" name="mensagem" style="resize:none" class="input-form" rows="10" placeholder="Digite sua mensagem" required></textarea>
+                <textarea id="mensagem" name="mensagem" style="resize:none" class="input-form" rows="10" placeholder="Digite sua mensagem" required></textarea>
                 <input type="hidden" name="_next" value="">
                 <input type="hidden" name="_captcha" value="false">
-                <button class="submit" type="submit">Enviar</button>
-           </form>
+                <button class="submit"  id="submit">Enviar</button>
+            </div>
         </section>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+            import { getFirestore, collection, addDoc} from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js';
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyC610lPnIxA-LmCLjN307Q6fM5pDs-1_eU",
+              authDomain: "petcc-f70bf.firebaseapp.com",
+              projectId: "petcc-f70bf",
+              storageBucket: "petcc-f70bf.appspot.com",
+              messagingSenderId: "797090404602",
+              appId: "1:797090404602:web:dbe7a9831f0c79c35dd143"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+            
+            function submit(){
+                let nome = document.getElementById("nome");
+                let email= document.getElementById("email");
+                let phone = document.getElementById("phone");
+                let mensagem = document.getElementById("mensagem")
+                
+                try{
+                    addDoc(collection(db,"contato"), {
+                        nome: nome.value, 
+                        email: email.value, 
+                        phone: phone.value, 
+                        mensagem: mensagem.value});
+                    nome.value = "";
+                    email.value = "";
+                    phone.value = "";
+                    mensagem.value = "";
+                    alert("Contato Salvo");
+
+                }catch(e){
+                    console.error("erro:",e);
+                }
+            }
+            document.getElementById("submit").addEventListener("click", submit);
+
+            
+          </script>
+
     </body>
 </html>
