@@ -1,0 +1,51 @@
+.main {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+.definicao {
+    width: 900px;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+  
+  .definicao li {
+    transition: transform 0.3s ease;
+    flex-basis: calc(33.33% - 20px);
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 10px;
+  }
+  
+  .definicao li:hover {
+    transform: scale(1.05);
+    border-color: #12cad3;
+  }
+  
+  .definicao li:active {
+    border-color: #088C19;
+  }
+  
+  .definicao h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .definicao-descricao {
+    font-size: 18px;
+  }
+  
+  .definicao li img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; 
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title> PET Computação </title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel ="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/contato.css">
+	</head>
+	<body>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyC610lPnIxA-LmCLjN307Q6fM5pDs-1_eU",
+              authDomain: "petcc-f70bf.firebaseapp.com",
+              projectId: "petcc-f70bf",
+              storageBucket: "petcc-f70bf.appspot.com",
+              messagingSenderId: "797090404602",
+              appId: "1:797090404602:web:dbe7a9831f0c79c35dd143"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+          </script>
+
+
+		<header>
+			<div class ="principal">
+				<h1><img src="img/pet.png"></h1>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="integrantes.html">Integrantes</a></li>
+						<li><a href="contato.html">Contato</a></li>
+						<li><a href="projetos.html">Projetos</a></li>
+						<li><a href="historia.html">História</a></li>
+						<li><a href="tutores.html">Tutores</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+        <section id="fale-conosco" class="fale-conosco">
+            <div class="img-and-text">
+                <div class="img" >
+                    <img src="https://img.freepik.com/vetores-gratis/conceito-de-relacoes-publicas-plano-organico-ilustrado_23-2148891184.jpg?w=360" alt="logo-de-megafone" width="180px">
+                </div>
+                <div class="text">
+                    <h2>Fale Conosco!!</h2> <br>
+                    <p>Para parcerias e interesse em ser voluntário em alguns projetos, é só preencher o formulário!</p>
+                </div>
+            </div>
+            <form action="" method="POST">
+                <label for="nome">Nome Completo* </label>
+                <input id="nome" class="input-form" type="text" name="name" placeholder="Digite o nome" required>
+                <label for="email">E-mail* </label>
+                <input id="email" class="input-form" type="email" name="email" placeholder="Digite seu e-mail" required>
+                <label for="phone">Telefone para contato* </label>
+                <input id="phone" class="input-form" type="text" name="phone" placeholder="(XX) 9XXXX-XXXX" required>
+                <label for="messagem">Mensagem* </label>
+                <textarea id="messagem" name="mensagem" style="resize:none" class="input-form" rows="10" placeholder="Digite sua mensagem" required></textarea>
+                <input type="hidden" name="_next" value="">
+                <input type="hidden" name="_captcha" value="false">
+                <button class="submit" type="submit">Enviar</button>
+           </form>
+        </section>
+    </body>
+</html>
